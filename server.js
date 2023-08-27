@@ -3,7 +3,6 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
-
 //dotenv
 const dotenv = require("dotenv");
 dotenv.config();
@@ -13,7 +12,6 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(morgan("default"));
 
 //Routes
 app.get("/", (req, res) => {
@@ -22,6 +20,10 @@ app.get("/", (req, res) => {
 
 //PORT
 const PORT = process.env.PORT || 2000;
+
+//Connect MongoDB
+const connectDB = require("./config/config");
+connectDB();
 
 //listen
 app.listen(PORT, () => {
