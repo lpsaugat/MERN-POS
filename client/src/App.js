@@ -1,9 +1,9 @@
 import logo from "./logo.svg";
 import "./App.css";
-import "antd";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import Items from "./pages/ItemPage";
+import "preline";
 
 function App() {
   return (
