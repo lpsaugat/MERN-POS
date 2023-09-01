@@ -14,8 +14,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 //Routes
-app.get("/", (req, res) => {
-  res.send("<h1>POS BACKEND</h1>");
+app.get("/backend", (req, res) => {
+  res.status(200).json("<h1>POS BACKEND</h1>");
 });
 
 //PORT
