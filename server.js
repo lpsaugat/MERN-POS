@@ -2,6 +2,8 @@ const express = require("express");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const asyncErrorMiddleware = require("./middleware/errorHandler");
+
 const app = express();
 //dotenv
 const dotenv = require("dotenv");
