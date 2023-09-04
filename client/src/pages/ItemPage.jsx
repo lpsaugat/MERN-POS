@@ -7,7 +7,7 @@ const Items = () => {
   useEffect(()=>{
     const getAllItems = async()=>{
       try{
-        const {data} = await axios.get('/backend')
+        const {data} = await axios.get('/items')
         setItemsData(data)
         console.log(data)
       }

@@ -1,11 +1,11 @@
 const router = require("express").Router();
 const itemController = require("../controller/itemController");
-const itemController = require("../controller/itemController");
-
 const verifyToken = require("./Authentication");
 
-router.get("/items", verifyToken, itemController.getItems);
+router.get("/items", itemController.getItems);
 
-router.post("/items", verifyToken, itemController.getItems);
+router.post("/items", itemController.createItems);
 
-router.put("/items", verifyToken, itemController.getItems);
+router.put("/items", itemController.updateItems);
+
+module.exports = router;
