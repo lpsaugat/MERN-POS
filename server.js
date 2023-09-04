@@ -1,8 +1,9 @@
 const express = require("express");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
+const multer = require("multer");
 const cors = require("cors");
-const asyncErrorMiddleware = require("./middleware/errorHandler");
+const errorHandlerMiddleware = require("./middleware/errorHandler");
 
 const app = express();
 //dotenv
@@ -10,14 +11,19 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 //Middlewares
+app.use(multer);
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(errorHandlerMiddleware);
 
 //Routes
-app.get("/backend", (req, res) => {
-  res.status(200).json("<h1>POS BACKEND</h1>");
+// const itemRoute = require("./routes/itemRoute");
+// app.use("/api", itemRoute);
+
+app.get("/items", (req, res) => {
+  console.log("HEEHHE");
 });
 
 //PORT
